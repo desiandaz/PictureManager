@@ -13,7 +13,7 @@ public abstract class AbstractDatabaseDao {
     	Connection connection = null;    
     	try {
 			Class.forName("com.mysql.jdbc.Driver");
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PictureManager","root","9links");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/PictureManager","-","-");
         } catch (SQLException e) {
             throw new DataAccessException("Failed to get connection from DataSource: ", e);
         } catch (ClassNotFoundException e) {
