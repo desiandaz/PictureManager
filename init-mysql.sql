@@ -1,0 +1,32 @@
+CREATE database PictureManager;
+
+CREATE TABLE IF NOT EXISTS PictureTable (
+	id BIGINT(20) NOT NULL AUTO_INCREMENT,
+	pictureName VARCHAR(255) NOT NULL,
+	pictureDimensionWidth INT NULL,
+	pictureDimensionHeight INT NULL,
+	pictureStorageLocation VARCHAR(999) NOT NULL,
+	pictureCreated TIMESTAMP NOT NULL,
+	pictureEventId INT NULL,
+	PRIMARY KEY  (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE IF NOT EXISTS EventTable (
+	id BIGINT(20) NOT NULL AUTO_INCREMENT,
+	eventName VARCHAR(255) NOT NULL,
+	eventDate TIMESTAMP NOT NULL,
+	eventLocationId INT NULL,
+	PRIMARY KEY  (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS EventLocationTable (
+	id BIGINT(20) NOT NULL AUTO_INCREMENT,
+	streetAddress VARCHAR(255) NULL,
+	city VARCHAR(255) NULL,
+	state VARCHAR(255) NULL,
+	country VARCHAR(255) NOT NULL,
+	longitude DOUBLE NOT NULL,
+	lattitude DOUBLE NOT NULL,
+	PRIMARY KEY  (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
